@@ -1,29 +1,20 @@
 import styled, { css } from 'styled-components';
 import { darken, lighten } from 'polished';
 
-export const FullScreen = styled.div`
+import { motion } from 'framer-motion';
+
+export const FullScreen = styled(motion.div)`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.7);
-  display: ${p => (p.open === 1 ? 'flex' : 'none')};
+  display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
   cursor: pointer;
-  animation: fadeIn 380ms ease-in-out 1;
-
-  @keyframes fadeIn {
-    from {
-      background-color: rgba(0, 0, 0, 0);
-    }
-
-    to {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
-  }
 
   > div {
     max-width: 508px;
